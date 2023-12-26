@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise #7 || Simple loading screen</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+
+	<style>
+		html {
+			font-size: 16px;
+			font-family: 'Figtree', sans-serif;
+			line-height: 1.5;
+		}
+
+        #loading-screen {
+            background-color: #FFFBF1;
+			height: 100dvh;
+			display: grid;
+			place-content: center;
+			text-align: center;
+			gap: 2rem;
+			color: #62312d;
+        }
+
+        /* Air */
+		@keyframes breath{
+			0%{
+				transform: scale(1);
+			}
+			50%{
+				transform: scale(1.1);
+			}
+			100%{
+				transform: scale(1);
+			}
+		}
+		
+		.breathc {
+			animation: 3s ease-in-out 1s infinite  alternate breath;
+		}
+	</style>
+</head>
+<body>
+    <div id="loading-screen">
+		<!-- The SVG is @c -->
+		<svg id="Capa_1" class="breathc" enable-background="new 0 0 512.004 512.004" width="150px" viewBox="0 0 512.004 512.004" xmlns="http://www.w3.org/2000/svg"><g><g><path d="m224.002 73c-70.03 0-127 56.97-127 127s56.97 127 127 127 127-56.97 127-127-56.97-127-127-127z" fill="#eebd4c"></path></g><g><path d="m351.002 200c0 70.03-56.97 127-127 127v-254c70.03 0 127 56.97 127 127z" fill="#e6903d"></path></g><g><path d="m342.796 96.206c-3.839 0-7.678-1.464-10.606-4.394-5.858-5.858-5.858-15.355 0-21.213l11.313-11.313c5.857-5.858 15.355-5.858 21.213 0s5.858 15.355 0 21.213l-11.313 11.313c-2.929 2.93-6.768 4.394-10.607 4.394z" fill="#eebd4c"></path></g><g><path d="m239.002 15v17c0 8.28-6.72 15-15 15s-15-6.72-15-15v-17c0-8.28 6.72-15 15-15s15 6.72 15 15z" fill="#f6de51"></path></g><g><path d="m239.002 15v17c0 8.28-6.72 15-15 15v-47c8.28 0 15 6.72 15 15z" fill="#eebd4c"></path></g><g><path d="m105.208 96.206c-3.839 0-7.678-1.464-10.606-4.394l-11.314-11.313c-5.858-5.858-5.858-15.355 0-21.213 5.857-5.858 15.355-5.858 21.213 0l11.313 11.314c5.858 5.858 5.858 15.355 0 21.213-2.928 2.929-6.767 4.393-10.606 4.393z" fill="#f6de51"></path></g><g><path d="m56.002 215h-16c-8.284 0-15-6.716-15-15s6.716-15 15-15h16c8.284 0 15 6.716 15 15s-6.716 15-15 15z" fill="#f6de51"></path></g><g><path d="m176.005 512.004c-1.543 0-3.112-.24-4.659-.745-7.875-2.572-12.174-11.04-9.603-18.916l16-49c2.571-7.875 11.036-12.174 18.915-9.603 7.875 2.572 12.174 11.04 9.603 18.916l-16 49c-2.067 6.328-7.942 10.348-14.256 10.348z" fill="#bdeafa"></path></g><g><path d="m302.262 452.66-16 49c-1.13 3.46-3.4 6.22-6.26 8.02-2.36 1.5-5.14 2.32-8 2.32-1.54 0-3.11-.24-4.66-.74-7.87-2.57-12.17-11.04-9.6-18.92l16-49c1.13-3.46 3.4-6.23 6.26-8.03 3.65-2.29 8.25-3.01 12.66-1.57 7.87 2.57 12.17 11.04 9.6 18.92z" fill="#bdeafa"></path></g><g><path d="m302.262 452.66-16 49c-1.13 3.46-3.4 6.22-6.26 8.02v-74.37c3.65-2.29 8.25-3.01 12.66-1.57 7.87 2.57 12.17 11.04 9.6 18.92z" fill="#9de1f7"></path></g><g><path d="m368.005 512.004c-1.543 0-3.112-.24-4.659-.745-7.875-2.572-12.174-11.04-9.603-18.916l16-49c2.571-7.875 11.035-12.174 18.915-9.603 7.875 2.572 12.174 11.04 9.603 18.916l-16 49c-2.067 6.328-7.942 10.348-14.256 10.348z" fill="#9de1f7"></path></g><g><path d="m438.962 242.19c.03-.73.04-1.46.04-2.19 0-34.74-28.26-63-63-63-3.38 0-6.73.26-10.02.79-20.99-25.72-52.4-40.79-85.98-40.79-56.31 0-102.96 42.16-110.07 96.56-3.28-.37-6.59-.56-9.93-.56-47.97 0-87 39.03-87 87s39.03 87 87 87h240c47.97 0 87-39.03 87-87 0-33.37-18.87-63.25-48.04-77.81z" fill="#dce4fe"></path></g><g><path d="m487.002 320c0 47.97-39.03 87-87 87h-120v-270c33.58 0 64.99 15.07 85.98 40.79 3.29-.53 6.64-.79 10.02-.79 34.74 0 63 28.26 63 63 0 .73-.01 1.46-.04 2.19 29.17 14.56 48.04 44.44 48.04 77.81z" fill="#c5d5fd"></path></g></g></svg>
+	</div>
+</body>
+</html>
