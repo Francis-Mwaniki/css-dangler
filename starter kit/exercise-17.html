@@ -132,6 +132,21 @@
 		}
 
 		/* Air */
+		.magneto {
+		width: 10rem;
+		height: 10rem;
+		border: none;
+		border-radius: 50%;
+		background-color: var(--gray-100);
+		color:white;
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		 
+		}
 	</style>
 </head>
 <body>
@@ -162,9 +177,79 @@
 		<h1>Shaping Visions into Reality with <span>Boldness</span></h1>
 
 		<!-- Air -->
+		<div class="magneto">
+			<span class="text">Our Work</span>
+		</div>
+
+		<div id="debugger"></div>
 		<!-- End Air -->
 	</section>
 
 	<!-- Air -->
+	<script>
+		const magneto = document.querySelector('.magneto');
+		const text = document.querySelector('.magneto .text')
+		const debuggerEl = document.querySelector('#debugger');
+
+	     const activateEvent = (e) => {
+	         const boundBox = magneto.getBoundingClientRect();
+			 const magnetoStrength = 40;
+			 const magnetoTextStrength = 40;
+			 const magnetoX = ((e.clientX - boundBox.left)/ magneto.offsetWidth) - 0.5;
+			 const magnetoY = ((e.clientY - boundBox.top)/ magneto.offsetHeight) - 0.5;
+
+			/* magneto.style.transform = `translate3d(${magnetoX * magnetoStrength}px, ${magnetoY * magnetoStrength}px, 0)`;
+			 text.style.transform = `translate3d(${magnetoX * magnetoTextStrength}px, ${magnetoY * magnetoTextStrength}px, 0)`;*/
+
+			 
+
+
+			 gsap.to('.magneto', {
+				 duration: 0.4,
+				 x: magnetoX * magnetoStrength,
+				 y: magnetoY * magnetoStrength,
+				 ease: 'power4.easeOut'
+			 
+			 })
+
+			 gsap.to('.magneto .text', {
+				duration: 0.4,
+				x: magnetoX * magnetoTextStrength,
+				y: magnetoY * magnetoTextStrength,
+				ease: 'power4.easeOut'
+			 })
+	     }
+
+		 const resetMagneto = (e) => {
+			 gsap.to('.magneto', {
+				 duration: 1,
+				 x: 0,
+				 y: 0,
+				 ease: Elastic.easeOut
+			 
+			 })
+
+			 gsap.to('.magneto .text', {
+				duration: 1,
+				x: 0,
+				y: 0,
+				ease: Elastic.easeOut
+			 })
+
+
+
+
+			
+		 }
+
+	     document.addEventListener('mousemove', activateEvent);
+		 document.addEventListener('mouseleave', resetMagneto);
+
+
+	
+		 
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </body>
 </html>
